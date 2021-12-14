@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ActionPlus extends AppCompatActivity {
     private Button btn_result;
@@ -42,6 +43,8 @@ public class ActionPlus extends AppCompatActivity {
                         first_number = Integer.parseInt(edt_first_number.getText().toString().trim());
                         second_number = Integer.parseInt(edt_second_number.getText().toString().trim());
                         MyMath.addition(first_number, second_number);
+                        finish();
+                        Toast.makeText(ActionPlus.this, ""+MyMath.addition(first_number, second_number), Toast.LENGTH_SHORT).show();
                     } catch (NumberFormatException e) {
                         e.printStackTrace();
                     }
